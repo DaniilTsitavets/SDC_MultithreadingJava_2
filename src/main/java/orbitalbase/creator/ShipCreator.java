@@ -3,10 +3,10 @@ package orbitalbase.creator;
 import lombok.extern.slf4j.Slf4j;
 import orbitalbase.entity.Ship;
 
-
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+
 @Slf4j
 public class ShipCreator {
 
@@ -22,7 +22,7 @@ public class ShipCreator {
         Queue<Ship> ships = new PriorityQueue<>();
 
         for (int i = 0; i < valuesList.size(); i++) {
-            Ship ship = create(valuesList.get(i), i+1);
+            Ship ship = create(valuesList.get(i), i + 1);
             ships.offer(ship);
         }
 
