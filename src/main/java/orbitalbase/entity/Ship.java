@@ -1,4 +1,6 @@
 package orbitalbase.entity;
+import lombok.Getter;
+import lombok.Setter;
 import orbitalbase.entity.state.ShipState;
 import orbitalbase.entity.state.impl.GettingInShipState;
 import orbitalbase.entity.state.impl.GettingOutShipState;
@@ -7,18 +9,16 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Ship extends Thread implements Comparable<Ship> {
 
+    @Setter
     private int shipId;
-    private int capacity = 10;
-    private int shipCargoWeight = 10;
+    @Setter
+    @Getter
+    private int capacity; //грузоподъёмность
+    @Setter
+    @Getter
+    private int shipCargoWeight;
 
     private ShipState state = new GettingInShipState();
-
-    public Ship() {
-    }
-
-    public Ship(int shipId) {
-        this.shipId = shipId;
-    }
 
     public Ship(int shipId, int capacity, int shipCargoWeight) {
         this.shipId = shipId;
@@ -28,26 +28,6 @@ public class Ship extends Thread implements Comparable<Ship> {
 
     public long getShipId() {
         return shipId;
-    }
-
-    public void setShipId(int shipId) {
-        this.shipId = shipId;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public int getShipCargoWeight() {
-        return shipCargoWeight;
-    }
-
-    public void setShipCargoWeight(int shipCargoWeight) {
-        this.shipCargoWeight = shipCargoWeight;
     }
 
     public ShipState getShipState() {
