@@ -44,7 +44,7 @@ public class Port {
 
     public Pier getPier() throws CustomException {
         try {
-            semaphore.acquire();
+            semaphore.acquire(); //уменьшить счетчик
             return piers.poll(); // выдать пирс
 
         } catch (InterruptedException e) {
