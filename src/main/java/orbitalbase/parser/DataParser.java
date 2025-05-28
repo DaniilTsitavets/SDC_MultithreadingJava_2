@@ -4,12 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Slf4j
 public class DataParser {
     private static final String PARAM_DELIMITER = "\\s+";
-
-    public DataParser() {
-    }
 
     public List<List<Integer>> parseData(List<String> lines) {
         if (lines.isEmpty()) {
